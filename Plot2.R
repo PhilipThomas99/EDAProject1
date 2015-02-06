@@ -10,8 +10,8 @@ row.names(dataSubset) <- NULL
 timeFormat <- paste(dataSubset$Date, dataSubset$Time)
 dataSubset$Time <- strptime(timeFormat, format = "%Y-%m-%d %H:%M:%S")
 
-#Plotting
-png("plot2.png", width=480, height=480) 
+#Plotting to png device
+png("plot2.png", width=480, height=480, bg = "transparent") 
 plot(dataSubset$Time, dataSubset$Global_active_power, type='l',
      ylab="Global Active Power (kilowatts)",xlab="")
 dev.off()
